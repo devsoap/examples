@@ -1,0 +1,9 @@
+package.json
+node_modules
+build
+.gradle
+.idea
+*.ipr
+*.iws
+.resourceCache
+yarn.lock

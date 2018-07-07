@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="currency-converter-example-ui-react:main" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.type="sourceSet" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/out/production/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/groovy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+    </content>
+    <content url="file://$MODULE_DIR$/src/ratpack">
+      <sourceFolder url="file://$MODULE_DIR$/src/ratpack" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-groovy:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-h2:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-guice:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-core:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.javamoney:moneta:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: javax.money:money-api:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-simple:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: org.flywaydb:flyway-core:4.0.3" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-exec:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.ben-manes.caffeine:caffeine:2.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.javassist:javassist:3.19.0-GA" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-guava:2.9.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.yaml:snakeyaml:1.18" level="project" />
+    <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.4.12" level="project" />
+    <orderEntry type="library" name="Gradle: javax.annotation:javax.annotation-api:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.ratpack:ratpack-base:1.5.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: com.h2database:h2:1.4.186" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-unix-common:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.0.final" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.4" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.inject:guice:4.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.inject.extensions:guice-multibindings:4.1.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.guava:guava:21.0" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.22.Final" level="project" />
+    <orderEntry type="library" name="Gradle: javax.inject:javax.inject:1" level="project" />
+    <orderEntry type="library" name="Gradle: aopalliance:aopalliance:1.0" level="project" />
+  </component>
+</module>
