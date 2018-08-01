@@ -7,4 +7,4 @@ Example application for creating a currency converter REST end-point with Ratpac
 Example application for creating a currency converter REST end-point with Ratpack with externalized services and handlers
 
 #### currency-converter-ratpack-ui-react
-Example application for creating a currency converter REST end-point with Ratpack and a ReactJS base UI
+Example application for creating a currency converter REST end-point with Ratpack and a ReactJS based UI
