@@ -1,0 +1,55 @@
+---
+title: Using the Annotation Based Router API
+order: 3
+layout: page
+---
+
+= Using the Annotation Based Router API
+
+In Beverage Buddy, we are using the annotation based router API. The following sections demonstrate the usage of the new API through snippets from the code.
+
+== Defining the routes with @Route
+In the annotation based router API, different routes are defined by annotating your target classes with `@Route`.
+[source, java]
+--------------
+@Route(value = "", layout = MainLayout.class)
+public class ReviewsList extends PolymerTemplate<ReviewsModel> {
+}
+--------------
+[source, java]
+--------------
+@Route(value = "categories", layout = MainLayout.class)
+public class CategoriesList extends Div {
+}
+--------------
+
+Here, we have two views, for listing reviews and categories, respectively.
+As you notice, the value of the `@Route' annotation for the reviews view is
+empty, which means it is the *default* route target for this application.
+
+[NOTE]
+`MainLayout.class` is declared as the parent layout here. In order for a class
+to be used as a parent layout, it must implement the `RouterLayout` interface.
+
+In annotation based router API, the servlet will be registered automatically by
+mapping the `@Route` annotation from each navigation target, so there is no need
+to declare it manually.
+
+You can find more about this topic
+https://vaadin.com/docs/v10/flow/routing/tutorial-routing-annotation.html[
+here].
+
+== Navigating between routes
+After defining the routes, you can use `RouterLink` to create the links in `MainLayout`.
+[source, java]
+--------------
+reviews = new RouterLink(null, ReviewsList.class);
+reviews.add(new Icon(VaadinIcons.LIST), new Text("Reviews"));
+categories = new RouterLink(null, CategoriesList.class);
+categories.add(new Icon(VaadinIcons.ARCHIVES), new Text("Categories"));
+--------------
+[TIP]
+You can also add a URL parameter in the `RouterLink` component.
+You can find more about this topic
+https://vaadin.com/docs/v10/flow/routing/tutorial-routing-navigation.html[
+here].
