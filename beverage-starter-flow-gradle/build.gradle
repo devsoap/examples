@@ -16,7 +16,7 @@ vaadin {
     version '10.0.3'
 
     // Enable production mode for production apps
-    productionMode true
+    productionMode false
 }
 
 // We specify here manually the dependencies, another option would be to just autoconfigure and remove the
