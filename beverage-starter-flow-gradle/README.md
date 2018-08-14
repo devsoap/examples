@@ -1,7 +1,7 @@
 # Gradle Beverage Buddy App Starter for Vaadin 10 
 :coffee::tea::sake::baby_bottle::beer::cocktail::tropical_drink::wine_glass:
 
-This is a Vaadin 10 Flow example Java application, used to demonstrate features of the Vaadin Flow Java framework.
+This is a Vaadin 10 Flow example Java application, used to demonstrate features of the Vaadin Flow Java framework with the Gradle Vaadin Flow plugin.
 
 The Starter demonstrates the core Vaadin Flow concepts:
 * Using the []Gradle Vaadin Flow plugin](https://github.com/devsoap/gradle-vaadin-flow) to build and run the project
@@ -18,10 +18,12 @@ The project can be imported into the IDE of your choice, with Java 8 installed, 
 
 ## Running the Project
 
-1. Run using `./gradle jettyR`
+1. Run using `./gradlew jettyRun`
 2. Wait for the application to start
 3. Open http://localhost:8080/beveragebuddy to view the application
 
 ## Documentation
 
 Brief introduction to the application parts can be found from the `documentation` folder. For Vaadin 10 documentation for Java users, see [Vaadin.com/docs](https://vaadin.com/docs/v10/flow/Overview.html).
+
+For more information of the usage of the Gradle Vaadin Flow plugin see https://github.com/devsoap/gradle-vaadin-flow/wiki.
