@@ -11,3 +11,6 @@ Example application for creating a currency converter REST end-point with Ratpac
 
 #### beverage-buddy-starter-flow-gradle
 Example application demonstrating how to use the Gradle Vaadin Flow plugin with Vaadin 10
+
+#### karibu10-helloworld-application
+Example application to demonstrate using Kotlin + Karibu DSL with the Gradle Vaadin Flow plugin
