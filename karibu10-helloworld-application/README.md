@@ -12,7 +12,7 @@ Uses [Gradle Vaadin Flow](https://github.com/devsoap/gradle-vaadin-flow) for bui
 
 To start the app run ./gradlew jettyRun in the root folder.
 
-The app will be running on [http://localhost:8080/](http://localhost:8080/).
+The app will be running on [http://localhost:8080/karibu10-helloworld-application/](http://localhost:8080/karibu10-helloworld-application/).
 
 This is a port of [Skeleton Starter Flow](https://github.com/vaadin/skeleton-starter-flow) to Kotlin+Gradle.
 
