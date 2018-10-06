@@ -14,3 +14,6 @@ Example application demonstrating how to use the Gradle Vaadin Flow plugin with 
 
 #### karibu10-helloworld-application
 Example application to demonstrate using Kotlin + Karibu DSL with the Gradle Vaadin Flow plugin
+
+#### flow-spring-tutorial
+Example application demonstrating using Spring Boot with Vaadin Flow with the Gradle Vaadin Flow plugin

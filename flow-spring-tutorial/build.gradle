@@ -1,0 +1,26 @@
+plugins {
+    id "org.springframework.boot" version "2.0.5.RELEASE"
+    id "com.devsoap.vaadin-flow" version "1.0.0.M6"
+}
+
+ext {
+    jackson_databind_version = '2.9.2'
+    vaadinVersion = '10.0.4' // Alternatively vaadin.version can be used
+}
+
+// Enable to activate production mode.
+// In production mode only bootJar and bootWar is supported.
+// vaadin.productionMode = true
+
+// Autoconfigure Vaadin dependencies for Spring Boot
+vaadin.autoconfigure()
+
+// Add some additional dependencies
+dependencies {
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jackson_databind_version
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jackson_databind_version
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jackson_databind_version
+}
+
+
+
