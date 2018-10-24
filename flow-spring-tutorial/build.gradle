@@ -1,6 +1,6 @@
 plugins {
     id "org.springframework.boot" version "2.0.5.RELEASE"
-    id "com.devsoap.vaadin-flow" version "1.0.0.M6"
+    id "com.devsoap.vaadin-flow" version "1.0.0.RC1"
 }
 
 ext {
