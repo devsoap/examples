@@ -15,8 +15,16 @@ ext {
 // Autoconfigure Vaadin dependencies for Spring Boot
 vaadin.autoconfigure()
 
+// Setup configuration for development only dependencies
+configurations {
+    developmentOnly
+    runtimeClasspath.extendsFrom developmentOnly
+}
+
 // Add some additional dependencies
 dependencies {
+    developmentOnly group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.5.RELEASE'
+
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: jackson_databind_version
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jackson_databind_version
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: jackson_databind_version

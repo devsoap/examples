@@ -30,10 +30,6 @@ import com.vaadin.flow.templatemodel.TemplateModel;
  * Simple template example.
  */
 @Tag("example-template")
-/*
- * Pay attention!: the web resources are in the maven resources folder
- * META-INF/resources (one of the default web resources folder in Spring Boot).
- */
 @HtmlImport("frontend://ExampleTemplate.html")
 @SpringComponent
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
