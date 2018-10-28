@@ -17,3 +17,6 @@ Example application to demonstrate using Kotlin + Karibu DSL with the Gradle Vaa
 
 #### flow-spring-tutorial
 Example application demonstrating using Spring Boot with Vaadin Flow with the Gradle Vaadin Flow plugin
+
+#### fn-cors-proxy
+Example project implementing a simple CORS proxy as a FN function with Groovy using the FN Gradle plugin

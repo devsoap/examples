@@ -1,0 +1,33 @@
+plugins {
+    id 'groovy'
+    id 'com.devsoap.fn' version '0.0.4'
+}
+
+group 'com.devsoap.fn'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+ext {
+    fnVersion = '1.0.74'
+}
+
+fnDocker {
+    functionClass = 'com.devsoap.corsproxy.CorsProxy'
+    functionMethod = 'proxy'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://dl.bintray.com/fnproject/fnproject' }
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.5.3'
+    compile "com.fnproject.fn:api:$fnVersion"
+    compile 'io.github.http-builder-ng:http-builder-ng-core:1.0.3'
+
+    testCompile "junit:junit:4.12"
+    testCompile "com.fnproject.fn:testing-core:$fnVersion"
+    testCompile "com.fnproject.fn:testing-junit4:$fnVersion"
+}
