@@ -1,16 +1,48 @@
+/*
+ * Copyright 2018 Devsoap Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.devsoap.corsproxy
 
-
-import com.fnproject.fn.api.InputEvent
 import com.fnproject.fn.api.OutputEvent
 import com.fnproject.fn.api.httpgateway.HTTPGatewayContext
 import groovyx.net.http.HttpBuilder
 
+/**
+ * A simple CORS proxy
+ *
+ * Usage:
+ *
+ *    Invoke with "url=http://<target API>" parameter to proxy the call
+ */
 class CorsProxy {
 
+    /**
+     * Proxies the a http request to the target URL and returns the response along with a proper
+     * Access-Control-Allow-Origin header.
+     *
+     * @param context
+     *      The Gateway context
+     *
+     * @return
+     *      the response from the proxied call
+     */
     OutputEvent proxy(HTTPGatewayContext context) {
         String response
         OutputEvent.Status status
+
+        // Only support JSON calls
         String contentType = 'application/json'
 
         // Set access control headers
@@ -40,6 +72,7 @@ class CorsProxy {
             default: throw new IllegalArgumentException("HTTP method '$context.method' not implemented")
         }
 
+        // Assume the call succeeded
         status = OutputEvent.Status.Success
 
         // Return remote call response
