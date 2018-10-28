@@ -1,12 +1,13 @@
 plugins {
     id 'groovy'
-    id 'com.devsoap.fn' version '0.0.4'
+    id 'com.devsoap.fn' version '0.0.5'
 }
 
 group 'com.devsoap.fn'
 version '1.0.0'
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 ext {
     fnVersion = '1.0.74'
