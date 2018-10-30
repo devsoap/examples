@@ -1,0 +1,23 @@
+pipeline {
+  agent {
+    label 'linux'
+  }
+
+  environment {
+     DOCKER_REGISTRY = credentials('DOCKER_REGISTRY')
+     FN_API_URL = credentials('FN_API_URL')
+  }
+
+  stages {
+      stage('Build & Deploy') {
+        steps {
+          sh "./gradlew fnDeploy -PBUILD_VERSION=${params.buildVersion}"
+        }
+      }
+      stage('Cleanup') {
+        steps {
+          sh "./gradlew clean"
+        }
+      }
+  }
+}
