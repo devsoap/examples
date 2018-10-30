@@ -3,6 +3,10 @@ pipeline {
     label 'linux'
   }
 
+  parameters {
+    string(name: 'buildVersion',  description: 'Build version', defaultValue: '1.0.${BUILD_NUMBER}')
+  }
+
   environment {
      DOCKER_REGISTRY = credentials('DOCKER_REGISTRY')
      FN_API_URL = credentials('FN_API_URL')
