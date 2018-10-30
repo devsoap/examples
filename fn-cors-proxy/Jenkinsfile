@@ -15,7 +15,7 @@ pipeline {
   stages {
       stage('Build & Deploy') {
         steps {
-          sh "cd fn-cors-proxy && ./gradlew fnDeploy -PBUILD_VERSION=${params.buildVersion}"
+          sh "cd fn-cors-proxy && ./gradlew fnDeploy -PBUILD_VERSION=${params.buildVersion} -PDOCKER_REGISTRY=${credentials('DOCKER_REGISTRY')} -PFN_API_URL=${credentials('FN_API_URL')}"
         }
       }
       stage('Cleanup') {
