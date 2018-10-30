@@ -15,12 +15,12 @@ pipeline {
   stages {
       stage('Build & Deploy') {
         steps {
-          sh "./gradlew fnDeploy -PBUILD_VERSION=${params.buildVersion}"
+          sh "cd fn-cors-proxy && ./gradlew fnDeploy -PBUILD_VERSION=${params.buildVersion}"
         }
       }
       stage('Cleanup') {
         steps {
-          sh "./gradlew clean"
+          sh "cd fn-cors-proxy && ./gradlew clean"
         }
       }
   }
