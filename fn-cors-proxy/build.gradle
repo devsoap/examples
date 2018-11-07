@@ -18,15 +18,6 @@ fnDocker {
     functionMethod = 'proxy'
 }
 
-fnDeploy {
-    if (hasProperty('DOCKER_REGISTRY')) {
-        registry getProperty('DOCKER_REGISTRY')
-    }
-    if (hasProperty('FN_API_URL')) {
-        api getProperty('FN_API_URL')
-    }
-}
-
 repositories {
     mavenCentral()
     maven { url 'https://dl.bintray.com/fnproject/fnproject' }
@@ -41,3 +32,75 @@ dependencies {
     testCompile "com.fnproject.fn:testing-core:$fnVersion"
     testCompile "com.fnproject.fn:testing-junit4:$fnVersion"
 }
+
+
+
+
+
+fnDeploy {
+    registry 'localhost:5000'
+    api 'localhost:8080'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//fnDeploy {
+//    registry 'localhost:5000'
+//    api 'localhost:8080'
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
