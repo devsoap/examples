@@ -1,10 +1,7 @@
 plugins {
     id 'org.akhikhl.gretty' version '2.0.0'
-    //id 'com.devsoap.vaadin-flow' version '1.0.0.RC2'
+    id 'com.devsoap.vaadin-flow' version '1.0.0.RC3'
 }
-
-
-apply from: '/home/john/Repositories/gradle-vaadin-flow/local.plugin'
 
 group = 'com.vaadin.starter'
 version = '1.0-SNAPSHOT'
@@ -16,10 +13,10 @@ targetCompatibility = 1.8
 
 vaadin {
     // Vaadin version to use
-    version '11.0.1'
+    version = '11.0.2'
 
     // Enable production mode for production apps
-    productionMode true
+    productionMode = true
 }
 
 // We specify here manually the dependencies, another option would be to just autoconfigure and remove the
