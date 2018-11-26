@@ -15,13 +15,13 @@
  */
 package com.vaadin.flow.demo.helloworld
 
-import com.github.vok.karibudsl.flow.*
-import com.vaadin.flow.router.Route
+import com.github.mvysny.karibudsl.v10.button
+import com.github.mvysny.karibudsl.v10.onLeftClick
 import com.vaadin.flow.component.dependency.HtmlImport
-import com.vaadin.flow.component.dialog.Dialog
 import com.vaadin.flow.component.orderedlayout.VerticalLayout
 import com.vaadin.flow.component.page.BodySize
 import com.vaadin.flow.component.page.Viewport
+import com.vaadin.flow.router.Route
 import com.vaadin.flow.theme.Theme
 import com.vaadin.flow.theme.lumo.Lumo
 

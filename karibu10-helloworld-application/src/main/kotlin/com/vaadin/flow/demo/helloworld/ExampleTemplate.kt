@@ -15,14 +15,14 @@
  */
 package com.vaadin.flow.demo.helloworld
 
-import com.github.vok.karibudsl.flow.VaadinDsl
-import com.github.vok.karibudsl.flow.init
-import com.vaadin.flow.demo.helloworld.ExampleTemplate.ExampleModel
-import com.vaadin.flow.templatemodel.TemplateModel
-import com.vaadin.flow.component.Tag
+import com.github.mvysny.karibudsl.v10.VaadinDsl
+import com.github.mvysny.karibudsl.v10.init
 import com.vaadin.flow.component.HasComponents
+import com.vaadin.flow.component.Tag
 import com.vaadin.flow.component.dependency.HtmlImport
 import com.vaadin.flow.component.polymertemplate.PolymerTemplate
+import com.vaadin.flow.demo.helloworld.ExampleTemplate.ExampleModel
+import com.vaadin.flow.templatemodel.TemplateModel
 
 /**
  * Simple template example.
