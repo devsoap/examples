@@ -1,11 +1,11 @@
 plugins {
     id "org.springframework.boot" version "2.0.5.RELEASE"
-    id "com.devsoap.vaadin-flow" version "1.0.0.RC3"
+    id "com.devsoap.vaadin-flow" version "1.0.0.RC4"
 }
 
 ext {
     jackson_databind_version = '2.9.2'
-    vaadinVersion = '11.0.2' // Alternatively vaadin.version can be used
+    vaadinVersion = '12.0.0' // Alternatively vaadin.version can be used
 }
 
 // Enable to activate production mode.
