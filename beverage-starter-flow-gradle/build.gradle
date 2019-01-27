@@ -36,11 +36,32 @@ dependencies {
     // Include BOM to stabilize Vaadin versions
     compile         vaadin.bom()
     // Include only open source Vaadin components
-    compile         vaadin.core()
+    compile(vaadin.core())
     // Include a compatible servlet API version
     compileOnly     vaadin.servletApi()
     // Include a compatible slf4j version
     runtime         vaadin.slf4j()
 }
 
+
+/*
+ * By default the vaadin.core() dependency will import both Material and Lumo themes. This project
+ * uses the Lumo theme so we want exlcude the Material theme.
+ *
+ * To do that we need to do the following:
+ */
+
+// In production mode we want to exclude the Material styles imported from all vaadin components
+vaadinTranspileDependencies {
+    importExcludes = [
+        '.*/theme/material/.*',
+        '.*/vaadin-material-styles/.*'
+    ]
+}
+
+// We don't want the Material style Maven dependencies in our project either
+configurations.all {
+    exclude group: 'com.vaadin', module: 'vaadin-material-theme'
+    exclude group: 'org.webjars.bowergithub.vaadin', module: 'vaadin-material-styles'
+}
 
