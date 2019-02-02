@@ -1,0 +1,124 @@
+/*
+ * Copyright 2019 Devsoap Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+apply plugin: 'com.moowork.node'
+
+/**
+ * Configure FN Function
+ */
+fn {
+    // The name of the entrypoint class
+    functionClass = 'TodoAppFunction'
+
+    // To name of the entrypoint method
+    functionMethod = 'handleRequest'
+
+    // The available URL sub-paths
+    functionPaths = [
+            '/',
+            '/favicon.ico',
+            '/bundle.js',
+            '/styles.css'
+    ]
+}
+
+/**
+ * Configure FN Function timeouts
+ */
+fnDocker {
+    idleTimeout = 30
+    functionTimeout = 60
+}
+
+/**
+ * Configre Node/NPM/YARN
+ */
+node {
+    download = true
+    version = '11.8.0'
+}
+
+/**
+ * Creates the package.json file to manage Yarn dependencies
+ */
+task initPackage(type: YarnTask) {
+    yarnCommand = ['init', '-y']
+    doLast {
+        def packageJson = project.file('package.json')
+        def content = new groovy.json.JsonSlurper().parse(packageJson)
+        content['babel'] = [
+            'presets' : [
+                    "@babel/preset-env",
+                    "@babel/preset-react"
+            ]
+        ]
+        content['scripts'] = [
+            'bundle' : 'webpack-cli --config ./webpack.config.js --mode=production'
+        ]
+        packageJson.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(content))
+    }
+}
+
+/**
+ * Installs development dependencies
+ */
+task installDevDependencies(type: YarnTask, dependsOn: initPackage) {
+    yarnCommand = ['add', '--dev',
+                   'webpack',
+                   'webpack-cli',
+                   'html-webpack-plugin',
+                   'html-webpack-inline-source-plugin',
+                   'style-loader',
+                   'css-loader',
+                   '@babel/core',
+                   '@babel/preset-env',
+                   'babel-loader',
+                   '@babel/preset-react'
+    ]
+}
+
+/**
+ * Installs application dependencies
+ */
+task installDependencies(type: YarnTask, dependsOn: installDevDependencies) {
+    yarnCommand = ['add',
+                   'react',
+                   'react-dom',
+                   'babel',
+                   'babel-core',
+                   'whatwg-fetch'
+    ]
+}
+
+/**
+ * Bundles CSS/JS/HTML into a single HTML file to be served by the function
+ */
+task bundleFrontend(type: YarnTask) {
+    inputs.file project.file('package.json')
+    inputs.file project.file('yarn.lock')
+    inputs.files project.fileTree('src/main/html')
+    inputs.files project.fileTree('src/main/jsx')
+    outputs.file project.file('build/resources/main/bundle.js')
+    yarnCommand = ['run', 'bundle']
+}
+
+/**
+ * Include the bundle HTML file in the function JAR
+ */
+jar.dependsOn(bundleFrontend)
+
+
+
+
