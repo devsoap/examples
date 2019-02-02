@@ -1,6 +1,5 @@
 node_modules
 .gradle
 .idea
-package.json
 yarn.lock
 **/build

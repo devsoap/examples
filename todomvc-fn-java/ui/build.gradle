@@ -51,58 +51,6 @@ node {
 }
 
 /**
- * Creates the package.json file to manage Yarn dependencies
- */
-task initPackage(type: YarnTask) {
-    yarnCommand = ['init', '-y']
-    doLast {
-        def packageJson = project.file('package.json')
-        def content = new groovy.json.JsonSlurper().parse(packageJson)
-        content['babel'] = [
-            'presets' : [
-                    "@babel/preset-env",
-                    "@babel/preset-react"
-            ]
-        ]
-        content['scripts'] = [
-            'bundle' : 'webpack-cli --config ./webpack.config.js --mode=production'
-        ]
-        packageJson.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(content))
-    }
-}
-
-/**
- * Installs development dependencies
- */
-task installDevDependencies(type: YarnTask, dependsOn: initPackage) {
-    yarnCommand = ['add', '--dev',
-                   'webpack',
-                   'webpack-cli',
-                   'html-webpack-plugin',
-                   'html-webpack-inline-source-plugin',
-                   'style-loader',
-                   'css-loader',
-                   '@babel/core',
-                   '@babel/preset-env',
-                   'babel-loader',
-                   '@babel/preset-react'
-    ]
-}
-
-/**
- * Installs application dependencies
- */
-task installDependencies(type: YarnTask, dependsOn: installDevDependencies) {
-    yarnCommand = ['add',
-                   'react',
-                   'react-dom',
-                   'babel',
-                   'babel-core',
-                   'whatwg-fetch'
-    ]
-}
-
-/**
  * Bundles CSS/JS/HTML into a single HTML file to be served by the function
  */
 task bundleFrontend(type: YarnTask) {
