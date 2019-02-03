@@ -4,7 +4,7 @@ This is an example project implementing a simple CORS proxy as a FN function (ht
 using the FN Gradle plugin (https://github.com/devsoap/fn-gradle-plugin) 
 
 To test the function perform the following steps:
-   1) Start your FN server locally with ``fn start``
+   1) Start your FN server locally with ``./gradlew fnStart``
    2) Deploy the function by running ``./gradlew fnDeploy`` in the root folder
    3) To test the function run ``./gradlew fnInvoke --params="url=http://echo.jsontest.com/hello/world"`` 
    
