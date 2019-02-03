@@ -14,6 +14,11 @@ fn {
     functionMethod = 'proxy'
 }
 
+fnDocker {
+    idleTimeout = 30
+    functionTimeout = 60
+}
+
 repositories {
     mavenCentral()
     fn.fnproject()
@@ -29,4 +34,12 @@ dependencies {
     testCompile fn.testingGroovy()
     testCompile fn.testingCore()
     testCompile fn.testingJunit4()
+}
+
+// Production server deployment configuration
+if (System.getenv('FN_API_URL')) {
+    fnDeploy.api = System.getenv('FN_API_URL')
+}
+if (System.getenv('DOCKER_REGISTRY')) {
+    fnDeploy.registry = System.getenv('DOCKER_REGISTRY')
 }
