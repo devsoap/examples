@@ -4,7 +4,6 @@ plugins {
 }
 
 group 'com.devsoap.fn'
-version findProperty('BUILD_VERSION') ?: '1.0.'+ new Date().format('yyyyMMdd')
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
