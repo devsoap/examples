@@ -20,3 +20,6 @@ Example application demonstrating using Spring Boot with Vaadin Flow with the Gr
 
 #### fn-cors-proxy
 Example project implementing a simple CORS proxy as a FN function with Groovy using the FN Gradle plugin
+
+#### todomvc-fn-java
+Example multi-module application demonstrating how to build full-stack web applications with FN functions using the FN Gradle plugin
