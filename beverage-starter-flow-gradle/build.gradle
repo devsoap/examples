@@ -46,16 +46,17 @@ dependencies {
 
 /*
  * By default the vaadin.core() dependency will import both Material and Lumo themes. This project
- * uses the Lumo theme so we want exlcude the Material theme.
+ * uses the Lumo theme so we want exclude the Material theme.
  *
  * To do that we need to do the following:
  */
 
 // In production mode we want to exclude the Material styles imported from all vaadin components
+// Supporting both Windows and Unix path separators
 vaadinTranspileDependencies {
     importExcludes = [
-        '.*/theme/material/.*',
-        '.*/vaadin-material-styles/.*'
+            /.*[\\\/]theme[\\\/]material[\\\/].*/,
+            /.*[\\\/]vaadin-material-styles[\\\/].*/,
     ]
 }
 
