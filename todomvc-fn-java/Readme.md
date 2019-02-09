@@ -12,7 +12,7 @@ To run this project you will need valid AWS DynamoDB credentials where to todo i
 To run the project locally run the following on a terminal:
 ```bash
 > ./gradlew fnStart
-> ./gradlew fnDeploy -Daws.accessKeyId=<access key> -Daws.secretKey=<secret key> -Daws.region=<region>
+> ./gradlew fnDeploy -Paws.accessKeyId=<access key> -Paws.secretKey=<secret key> -Paws.region=<region>
 ```
 
 Once the application has successfully been deployed, it can be accessed via http://localhost:8080/t/todomvc.
