@@ -27,7 +27,7 @@ Other basic workflow steps:
 - developing the application
   - edit code in the ui module
   - run `./gradlew jettyRun` in the ui module or in the parent module
-  - open http://localhost:8080/my-starter-project-ui
+  - open http://localhost:8080
 - creating a production mode war
   - Set `vaadin.productionMode=true` in the ui module
   - run `./gradlew war` in the ui module or in the parent module

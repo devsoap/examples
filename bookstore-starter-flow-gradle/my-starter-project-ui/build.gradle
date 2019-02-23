@@ -8,7 +8,7 @@ vaadin {
     version = '12.0.7'
 
     // Enable production mode for production apps
-    // productionMode = true
+    productionMode = true
 }
 
 ext {
@@ -16,7 +16,12 @@ ext {
     jetty94Version = '9.4.15.v20190215'
 }
 
-// Autoconfigure vaadin dependencies
+// Run app from context root
+gretty {
+    contextPath = '/'
+}
+
+// Auto-configure vaadin dependencies
 vaadin.autoconfigure()
 
 dependencies {
