@@ -1,5 +1,3 @@
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vaadin-flow/Lobby#?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
-
 # Bookstore App Starter for Vaadin Flow using Gradle
 
 This is the bookstore app starter https://vaadin.com/start/lts/java-ui which uses Gradle instead of Maven as a build tool.
