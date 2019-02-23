@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+description = 'My Starter Project-backend'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'javax.validation:validation-api:1.1.0.Final'
+    testCompile 'junit:junit:4.11'
+}

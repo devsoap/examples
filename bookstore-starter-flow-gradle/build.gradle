@@ -1,0 +1,7 @@
+plugins {
+    id 'com.devsoap.vaadin-flow'    version '1.0.0.RC8' apply false
+    id 'org.gretty'                 version '2.3.1'     apply false
+}
+
+group = 'com.example.test'
+version = '1.0-SNAPSHOT'
