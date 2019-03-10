@@ -55,7 +55,6 @@ node {
  */
 task bundleFrontend(type: YarnTask) {
     inputs.file project.file('package.json')
-    inputs.file project.file('yarn.lock')
     inputs.files project.fileTree('src/main/html')
     inputs.files project.fileTree('src/main/jsx')
     outputs.file project.file('build/resources/main/bundle.js')
