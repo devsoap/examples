@@ -17,11 +17,13 @@
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.Optional;
 import java.util.UUID;
 
 @DynamoDBTable(tableName = "todomvc")
@@ -29,15 +31,7 @@ public class TodoItem implements Serializable {
 
     private String id = UUID.randomUUID().toString();
     private boolean active = true;
-    private String description = "Foo";
-
-    public static TodoItem fromStream(InputStream stream) {
-        try {
-            return new ObjectMapper().readValue(stream, TodoItem.class);
-        } catch (IOException e) {
-            return null;
-        }
-    }
+    private String description;
 
     @DynamoDBHashKey
     public String getId() {
@@ -64,5 +58,27 @@ public class TodoItem implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     * Helper method to create a TodoItem from an InputStream
+     */
+    public static Optional<TodoItem> fromStream(InputStream stream) {
+        try {
+            return Optional.of(new ObjectMapper().readValue(stream, TodoItem.class));
+        } catch (IOException e) {
+            return Optional.empty();
+        }
+    }
+
+    /**
+     * Helper method to convert the items into a byte array
+     */
+    public Optional<byte[]> toBytes() {
+        try {
+            return Optional.of(new ObjectMapper().writeValueAsBytes(this));
+        } catch (JsonProcessingException e) {
+            return Optional.empty();
+        }
     }
 }

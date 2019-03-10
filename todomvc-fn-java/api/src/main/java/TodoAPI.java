@@ -32,6 +32,7 @@ import java.util.Properties;
 
 import static com.fnproject.fn.api.OutputEvent.Status.FunctionError;
 import static com.fnproject.fn.api.OutputEvent.Status.Success;
+import static com.fnproject.fn.api.OutputEvent.emptyResult;
 import static com.fnproject.fn.api.OutputEvent.fromBytes;
 
 /**
@@ -67,24 +68,33 @@ public class TodoAPI {
      *      the input to the function
      */
     public OutputEvent handleRequest(HTTPGatewayContext context, InputEvent input) throws JsonProcessingException {
-        var objectMapper = new ObjectMapper();
         switch (context.getMethod()) {
             case "GET": {
-                return fromBytes(objectMapper.writeValueAsBytes(getItems()), Success, JSON_CONTENT_TYPE);
+                return fromBytes(new ObjectMapper().writeValueAsBytes(getItems()), Success, JSON_CONTENT_TYPE);
             }
             case "POST": {
-                TodoItem todoItem = input.consumeBody(TodoItem::fromStream);
-                return fromBytes(objectMapper.writeValueAsBytes(addItem(todoItem)), Success, JSON_CONTENT_TYPE);
+                return input.consumeBody(TodoItem::fromStream)
+                        .map(this::addItem)
+                        .flatMap(TodoItem::toBytes)
+                        .map(bytes -> fromBytes(bytes, Success, JSON_CONTENT_TYPE))
+                        .orElse(emptyResult(FunctionError));
             }
             case "PUT": {
-                TodoItem todoItem = input.consumeBody(TodoItem::fromStream);
-                return fromBytes(objectMapper.writeValueAsBytes(updateItem(todoItem)), Success, JSON_CONTENT_TYPE);
+                return input.consumeBody(TodoItem::fromStream)
+                        .map(this::updateItem)
+                        .flatMap(TodoItem::toBytes)
+                        .map(bytes -> fromBytes(bytes, Success, JSON_CONTENT_TYPE))
+                        .orElse(emptyResult(FunctionError));
             }
             case "DELETE": {
-                TodoItem todoItem = input.consumeBody(TodoItem::fromStream);
-                return fromBytes(objectMapper.writeValueAsBytes(deleteItem(todoItem)), Success, JSON_CONTENT_TYPE);
+                return input.consumeBody(TodoItem::fromStream)
+                        .map(this::deleteItem)
+                        .flatMap(TodoItem::toBytes)
+                        .map(bytes -> fromBytes(bytes, Success, JSON_CONTENT_TYPE))
+                        .orElse(emptyResult(FunctionError));
             }
-            default: return OutputEvent.emptyResult(FunctionError);
+            default:
+                return emptyResult(FunctionError);
         }
     }
 
