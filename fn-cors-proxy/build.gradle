@@ -1,6 +1,6 @@
 plugins {
     id 'groovy'
-    id 'com.devsoap.fn' version '0.1.6'
+    id 'com.devsoap.fn' version '0.1.7'
 }
 
 group 'com.devsoap.fn'
