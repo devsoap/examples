@@ -8,12 +8,7 @@ vaadin {
     version = '12.0.7'
 
     // Enable production mode for production apps
-    productionMode = true
-}
-
-ext {
-    // FIXME Required for jettyRun with Vaadin Flow plugin RC8, remove once Final arrives
-    jetty94Version = '9.4.15.v20190215'
+    // productionMode = true
 }
 
 // Run app from context root
