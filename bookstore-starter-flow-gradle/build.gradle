@@ -1,5 +1,5 @@
 plugins {
-    id 'com.devsoap.vaadin-flow'    version '1.1.1'       apply false
+    id 'com.devsoap.vaadin-flow'    version '1.1.2'     apply false
     id 'org.gretty'                 version '2.3.1'     apply false
 }
 
