@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 plugins {
-    id 'com.devsoap.fn' version '0.2' apply false
+    id 'com.devsoap.fn' version '1.0' apply false
     id "com.moowork.node" version "1.2.0" apply false
 }
 
