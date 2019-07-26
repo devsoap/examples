@@ -42,4 +42,7 @@ subprojects {
     if (System.getenv('DOCKER_REGISTRY')) {
         fnDeploy.registry = System.getenv('DOCKER_REGISTRY')
     }
+    if (System.getenv('SYSLOG_URL')) {
+    	fn.syslogUrl = System.getenv('SYSLOG_URL')
+    }
 }
