@@ -18,6 +18,7 @@ package com.devsoap.corsproxy
 import com.fnproject.fn.api.OutputEvent
 import com.fnproject.fn.api.httpgateway.HTTPGatewayContext
 import groovyx.net.http.HttpBuilder
+import groovyx.net.http.HttpObjectConfig
 
 /**
  * A simple CORS proxy
@@ -55,11 +56,12 @@ class CorsProxy {
         }
 
         // Setup our client to proxy the input
-        HttpBuilder http = HttpBuilder.configure {
-            request.uri = url.get()
-            //request.body = input.consumeBody({ stream -> stream.text })
-            request.contentType = contentType
-            request.accept = [contentType]
+        HttpBuilder http = HttpBuilder.configure { HttpObjectConfig config ->
+            config.with {
+                request.raw = url.get()
+                request.contentType = contentType
+                request.accept = [contentType]
+            }
         }
 
         // Determine HTTP method and execute remote call
