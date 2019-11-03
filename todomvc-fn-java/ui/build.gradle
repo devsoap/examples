@@ -51,9 +51,16 @@ node {
 }
 
 /**
+ * Installs node tooling
+ */
+task install(type: YarnTask) {
+    yarnCommand = ['install']
+}
+
+/**
  * Bundles CSS/JS/HTML into a single HTML file to be served by the function
  */
-task bundleFrontend(type: YarnTask) {
+task bundleFrontend(type: YarnTask, dependsOn: install) {
     inputs.file project.file('package.json')
     inputs.files project.fileTree('src/main/html')
     inputs.files project.fileTree('src/main/jsx')
