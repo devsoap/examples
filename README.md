@@ -10,10 +10,10 @@ Example application for creating a currency converter REST end-point with Ratpac
 Example application for creating a currency converter REST end-point with Ratpack and a ReactJS based UI
 
 #### beverage-buddy-starter-flow-gradle
-Example application demonstrating how to use the Gradle Vaadin Flow plugin with Vaadin 10
+Example application demonstrating how to use the Gradle Vaadin Flow plugin with Vaadin 14
 
 #### bookstore-starter-flow-gradle
-Example multi-module application demonstrating how to use the Gradle Vaadin Flow plugin with Vaadin 12
+Example multi-module application demonstrating how to use the Gradle Vaadin Flow plugin with Vaadin 14
 
 #### karibu10-helloworld-application
 Example application to demonstrate using Kotlin + Karibu DSL with the Gradle Vaadin Flow plugin
