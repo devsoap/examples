@@ -16,6 +16,7 @@
 package com.vaadin.starter.beveragebuddy.ui;
 
 import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
@@ -37,10 +38,8 @@ import com.vaadin.starter.beveragebuddy.ui.views.reviewslist.ReviewsList;
  * The main layout contains the header with the navigation buttons, and the
  * child views below that.
  */
-// Replaced by partial import in theme, If you want the whole theme,
-// then uncomment this and remove imports in HTML file.
-//@Theme(Lumo.class)
-@HtmlImport("frontend://styles/shared-styles.html")
+@Theme(Lumo.class)
+@CssImport("./shared-styles.css")
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 public class MainLayout extends Div implements RouterLayout, PageConfigurator {
 

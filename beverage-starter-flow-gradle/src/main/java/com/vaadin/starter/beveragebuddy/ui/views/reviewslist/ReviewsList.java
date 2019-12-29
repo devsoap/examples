@@ -20,6 +20,7 @@ import java.util.List;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.HtmlImport;
+import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.notification.Notification;
@@ -51,7 +52,7 @@ import com.vaadin.starter.beveragebuddy.ui.views.reviewslist.ReviewsList.Reviews
 @Route(value = "", layout = MainLayout.class)
 @PageTitle("Review List")
 @Tag("reviews-list")
-@HtmlImport("frontend://templates/reviews-list.html")
+@JsModule("./reviews-list.js")
 public class ReviewsList extends PolymerTemplate<ReviewsModel> {
 
     public interface ReviewsModel extends TemplateModel {
@@ -62,11 +63,11 @@ public class ReviewsList extends PolymerTemplate<ReviewsModel> {
     }
 
     @Id("search")
-    private TextField search;
+    private TextField search = new TextField();
     @Id("newReview")
-    private Button addReview;
+    private Button addReview = new Button();
     @Id("header")
-    private H2 header;
+    private H2 header = new H2();
 
     private ReviewEditorDialog reviewForm = new ReviewEditorDialog(
             this::saveUpdate, this::deleteUpdate);

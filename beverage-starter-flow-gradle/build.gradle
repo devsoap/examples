@@ -1,6 +1,7 @@
 plugins {
-    id 'org.gretty' version '2.3.1'
-    id 'com.devsoap.vaadin-flow' version '1.2'
+    id 'java'
+    id 'org.gretty' version '3.0.1'
+    id 'com.devsoap.vaadin-flow' version '1.3.3'
 }
 
 group = 'com.vaadin.starter'
@@ -13,10 +14,18 @@ targetCompatibility = 1.8
 
 vaadin {
     // Vaadin version to use
-    version = '12.0.0'
+    version = '14.1.2'
+}
 
-    // Enable production mode for production apps
-    // productionMode = true
+
+// Credentials must be set for NPM support (PRO feature)
+devsoap {
+    // email = FIXME Add your product registration email here
+    // key = FIXME Add your product registration key here
+}
+
+if(!devsoap.email || !devsoap.key ) {
+    throw new GradleException("Devsoap credentials must be set!")
 }
 
 // We specify here manually the dependencies, another option would be to just autoconfigure and remove the
