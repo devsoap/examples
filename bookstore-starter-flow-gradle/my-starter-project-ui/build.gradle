@@ -10,8 +10,6 @@ description = 'My Starter Project-ui'
 devsoap {
     // email = FIXME Add your product registration email here
     // key = FIXME Add your product registration key here
-    email = 'nspam234@gmail.com'
-    key = 'e1058e32-c659-4606-876d-6ace3703292f'
 }
 
 if(!devsoap.email || !devsoap.key ) {
