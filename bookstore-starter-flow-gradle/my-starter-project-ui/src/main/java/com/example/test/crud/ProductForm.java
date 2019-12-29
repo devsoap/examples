@@ -1,15 +1,10 @@
 package com.example.test.crud;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Locale;
-
-import org.vaadin.pekka.CheckboxGroup;
-
+import com.example.test.backend.data.Availability;
+import com.example.test.backend.data.Category;
+import com.example.test.backend.data.Product;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.checkbox.CheckboxGroup;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Label;
@@ -22,9 +17,13 @@ import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.data.converter.StringToBigDecimalConverter;
 import com.vaadin.flow.data.converter.StringToIntegerConverter;
 import com.vaadin.flow.data.value.ValueChangeMode;
-import com.example.test.backend.data.Availability;
-import com.example.test.backend.data.Category;
-import com.example.test.backend.data.Product;
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Locale;
 
 /**
  * A form for editing a single product.
@@ -126,7 +125,7 @@ public class ProductForm extends Div {
 
         category = new CheckboxGroup<>();
         category.setId("category");
-        category.getContent().getStyle().set("flex-direction", "column")
+        category.getStyle().set("flex-direction", "column")
                 .set("margin", "0");
         Label categoryLabel = new Label("Categories");
         categoryLabel.setClassName("vaadin-label");
