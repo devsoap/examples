@@ -15,6 +15,9 @@
  */
 package org.vaadin.spring.tutorial;
 
+import com.vaadin.flow.component.dependency.JsModule;
+import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.polymertemplate.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -30,21 +33,18 @@ import com.vaadin.flow.templatemodel.TemplateModel;
  * Simple template example.
  */
 @Tag("example-template")
-@HtmlImport("frontend://ExampleTemplate.html")
+@JsModule("./example-template.js")
 @SpringComponent
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class ExampleTemplate extends PolymerTemplate<ExampleModel> {
 
-    /**
-     * Template model which defines the single "name" property.
-     */
-    public static interface ExampleModel extends TemplateModel {
+    @Id("message")
+    private Span message;
 
-        void setMessage(String message);
-    }
+    public interface ExampleModel extends TemplateModel {}
 
     public ExampleTemplate(@Autowired Greeter bean) {
         // Set the initial value to the "message" property.
-        getModel().setMessage(bean.sayHello());
+        message.setText(bean.sayHello());
     }
 }
