@@ -22,7 +22,7 @@ import com.vaadin.flow.router.Route;
  */
 @Route("Login")
 @PageTitle("Login")
-@CssImport("./css/shared-styles.css")
+@CssImport("./shared-styles.css")
 public class LoginScreen extends FlexLayout {
 
     private TextField username;

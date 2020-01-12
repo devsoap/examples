@@ -13,7 +13,7 @@ import com.example.test.crud.SampleCrudView;
 /**
  * The layout of the pages e.g. About and Inventory.
  */
-@CssImport("./css/shared-styles.css")
+@CssImport("./shared-styles.css")
 @Theme(value = Lumo.class, variant = Lumo.DARK)
 public class MainLayout extends FlexLayout implements RouterLayout {
     private Menu menu;
