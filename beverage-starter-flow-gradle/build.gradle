@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'org.gretty' version '3.0.1'
-    id 'com.devsoap.vaadin-flow' version '1.3.3'
+    id 'com.devsoap.vaadin-flow' version '1.3.4'
 }
 
 group = 'com.vaadin.starter'
